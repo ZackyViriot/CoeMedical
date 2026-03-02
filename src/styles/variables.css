@@ -1,0 +1,65 @@
+:root {
+  /* Brand Colors - from COE Medical logo */
+  --color-primary: #2D2F7B;
+  --color-primary-light: #3E41A0;
+  --color-primary-dark: #1E2056;
+  --color-green: #5BA847;
+  --color-green-light: #7BC268;
+  --color-green-dark: #3D8A2E;
+
+  /* Backgrounds */
+  --color-bg: #F5F7FA;
+  --color-bg-warm: #F0F4F1;
+  --color-bg-hero: #EEF1F8;
+
+  /* Text */
+  --color-text-dark: #1A1A2E;
+  --color-text-light: #FFFFFF;
+  --color-text-muted: #6B7280;
+  --color-text-body: #4A4A5A;
+
+  /* Accents */
+  --color-accent-green-bg: #E8F5E3;
+  --color-accent-green-fg: #5BA847;
+  --color-accent-purple-bg: #EDEEF8;
+  --color-accent-purple-fg: #2D2F7B;
+  --color-accent-gold-bg: #FEF7E8;
+  --color-accent-gold-fg: #D4A017;
+  --color-accent-rose-bg: #FDE8E8;
+  --color-accent-rose-fg: #C25B56;
+  --color-accent-blue-bg: #E8F0FE;
+  --color-accent-blue-fg: #4A5BA0;
+
+  /* UI Elements */
+  --color-white: #FFFFFF;
+  --color-border: rgba(45, 47, 123, 0.08);
+  --color-shadow: rgba(45, 47, 123, 0.08);
+  --color-shadow-lg: rgba(45, 47, 123, 0.12);
+
+  /* Typography */
+  --font-serif: 'DM Serif Display', serif;
+  --font-sans: 'DM Sans', sans-serif;
+
+  /* Spacing */
+  --spacing-xs: 4px;
+  --spacing-sm: 8px;
+  --spacing-md: 16px;
+  --spacing-lg: 24px;
+  --spacing-xl: 32px;
+  --spacing-2xl: 48px;
+  --spacing-3xl: 64px;
+  --spacing-4xl: 96px;
+
+  /* Border Radius */
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 20px;
+  --radius-xl: 28px;
+  --radius-2xl: 36px;
+  --radius-full: 9999px;
+
+  /* Transitions */
+  --transition-fast: 0.2s ease;
+  --transition-medium: 0.3s ease;
+  --transition-slow: 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
