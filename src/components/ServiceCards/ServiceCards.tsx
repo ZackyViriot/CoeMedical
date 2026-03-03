@@ -55,11 +55,11 @@ const ServiceCards: React.FC = () => {
         <div className="section-header">
           <span className="section-label">Our Services</span>
           <h2 className="section-title">
-            Medical Support for<br />Every Need
+            What We Provide
           </h2>
           <p className="section-subtitle">
-            Comprehensive healthcare services designed to meet all your medical needs
-            with compassion, convenience, and expertise.
+            On-site primary care and behavioral health services for post-acute,
+            long-term care, and assisted living facilities. All insurances accepted.
           </p>
         </div>
 

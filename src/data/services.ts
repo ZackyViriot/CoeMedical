@@ -2,7 +2,7 @@ export const services = [
   {
     id: 1,
     title: "Primary Care",
-    description: "MD & NP providers delivering comprehensive on-site medical care at your facility.",
+    description: "Our MDs and NPs deliver comprehensive on-site primary care services in long-term care, post-acute, and assisted living facilities.",
     iconName: "Stethoscope",
     colors: {
       bg: "var(--color-accent-green-bg)",
@@ -12,7 +12,7 @@ export const services = [
   {
     id: 2,
     title: "Behavioral Health",
-    description: "Psychiatric NP and licensed counseling for mental health and emotional well-being.",
+    description: "Psychiatric NPs and LCSWs provide behavioral health and counseling services to support the mental and emotional well-being of residents.",
     iconName: "Brain",
     colors: {
       bg: "var(--color-accent-purple-bg)",
@@ -21,22 +21,22 @@ export const services = [
   },
   {
     id: 3,
-    title: "24/7 RN Call Center",
-    description: "Round-the-clock registered nurse support for urgent clinical questions and guidance.",
-    iconName: "PhoneMedical",
-    colors: {
-      bg: "var(--color-accent-gold-bg)",
-      accent: "var(--color-accent-gold-fg)"
-    }
-  },
-  {
-    id: 4,
-    title: "Prescription Management",
-    description: "Seamless medication ordering, refills, and management for all your pharmacy needs.",
+    title: "Rx Requests",
+    description: "Submit prescription requests and refills easily. Our providers manage all medication needs for your facility's residents.",
     iconName: "Pill",
     colors: {
       bg: "var(--color-accent-blue-bg)",
       accent: "var(--color-accent-blue-fg)"
+    }
+  },
+  {
+    id: 4,
+    title: "24/7 RN Call Center",
+    description: "Round-the-clock registered nurse support available for urgent clinical questions and after-hours guidance.",
+    iconName: "PhoneMedical",
+    colors: {
+      bg: "var(--color-accent-gold-bg)",
+      accent: "var(--color-accent-gold-fg)"
     }
   }
 ];

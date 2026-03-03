@@ -1,11 +1,13 @@
 import React, { useEffect, useRef, useState } from 'react';
 import './Navbar.css';
 import gsap from 'gsap';
+import { Phone, ArrowRight, Pill } from 'lucide-react';
 
 const Navbar: React.FC = () => {
   const navRef = useRef<HTMLElement>(null);
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
+  const [heroLogoVisible, setHeroLogoVisible] = useState(true);
 
   useEffect(() => {
     const nav = navRef.current;
@@ -21,6 +23,19 @@ const Navbar: React.FC = () => {
     };
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  // Watch the hero logo — hide navbar logo while it's in view
+  useEffect(() => {
+    const heroLogo = document.querySelector('.hero-logo-img');
+    if (!heroLogo) return;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => setHeroLogoVisible(entry.isIntersecting),
+      { threshold: 0 }
+    );
+    observer.observe(heroLogo);
+    return () => observer.disconnect();
   }, []);
 
   // Close menu when clicking a link
@@ -47,7 +62,7 @@ const Navbar: React.FC = () => {
     <>
       <nav ref={navRef} className={`navbar ${scrolled ? 'navbar-scrolled' : ''}`}>
         <div className="navbar-inner">
-          <a href="/" className="logo">
+          <a href="/" className={`logo ${heroLogoVisible ? 'logo-hidden' : ''}`}>
             <img src="/logo.png" alt="COE Medical — Care of Excellence PLLC" className="logo-img" />
           </a>
 
@@ -60,18 +75,17 @@ const Navbar: React.FC = () => {
           </div>
 
           <div className="nav-actions">
+            <a href="#rx-requests" className="nav-rx">
+              <Pill size={16} />
+              <span>Rx Requests</span>
+            </a>
             <a href="tel:+18005551234" className="nav-phone">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
-              </svg>
+              <Phone size={18} />
               <span>(800) 555-1234</span>
             </a>
             <a href="#appointment" className="nav-cta">
               Book Appointment
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                <line x1="5" y1="12" x2="19" y2="12"></line>
-                <polyline points="12 5 19 12 12 19"></polyline>
-              </svg>
+              <ArrowRight size={16} strokeWidth={2.5} />
             </a>
           </div>
 
@@ -99,20 +113,16 @@ const Navbar: React.FC = () => {
           <a href="#services" className="mobile-link" onClick={handleLinkClick}>Services</a>
           <a href="#about" className="mobile-link" onClick={handleLinkClick}>About</a>
           <a href="#contact" className="mobile-link" onClick={handleLinkClick}>Contact</a>
+          <a href="#rx-requests" className="mobile-link" onClick={handleLinkClick}>Rx Requests</a>
         </div>
         <div className="mobile-menu-actions">
           <a href="tel:+18005551234" className="mobile-phone" onClick={handleLinkClick}>
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-              <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
-            </svg>
+            <Phone size={18} />
             (800) 555-1234
           </a>
           <a href="#appointment" className="mobile-cta" onClick={handleLinkClick}>
             Book Appointment
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-              <line x1="5" y1="12" x2="19" y2="12"></line>
-              <polyline points="12 5 19 12 12 19"></polyline>
-            </svg>
+            <ArrowRight size={16} strokeWidth={2.5} />
           </a>
         </div>
       </div>

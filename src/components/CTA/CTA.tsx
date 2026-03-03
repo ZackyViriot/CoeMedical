@@ -2,6 +2,7 @@ import React, { useEffect, useRef } from 'react';
 import './CTA.css';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { ArrowRight, Phone } from 'lucide-react';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -40,23 +41,19 @@ const CTA: React.FC = () => {
           <div className="cta-pattern"></div>
           <div className="cta-content">
             <img src="/logo.png" alt="COE Medical" className="cta-logo" />
-            <h2 className="cta-title">Ready to Partner<br />with COE Medical?</h2>
+            <h2 className="cta-title">Partner with<br />COE Medical</h2>
             <p className="cta-text">
-              Bring expert on-site healthcare to your facility. Contact us today to learn how
-              our services can benefit your residents and staff.
+              Bring on-site primary care and behavioral health services to your facility.
+              We serve long-term care, post-acute, and assisted living communities
+              across Texas, Montana, and Wyoming. All insurances accepted.
             </p>
             <div className="cta-buttons">
               <a href="#appointment" className="cta-btn-primary">
                 Request a Consultation
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                  <line x1="5" y1="12" x2="19" y2="12"></line>
-                  <polyline points="12 5 19 12 12 19"></polyline>
-                </svg>
+                <ArrowRight size={18} strokeWidth={2.5} />
               </a>
               <a href="tel:+18005551234" className="cta-btn-secondary">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                  <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
-                </svg>
+                <Phone size={18} />
                 Call Us Now
               </a>
             </div>

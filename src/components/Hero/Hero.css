@@ -131,7 +131,6 @@
 }
 
 .hero-btn-primary:hover {
-  transform: translateY(-3px);
   box-shadow: 0 10px 32px rgba(45, 47, 123, 0.4);
 }
 
@@ -380,13 +379,13 @@
   }
 
   .hero-logo-visual {
-    width: 260px;
-    height: 340px;
+    width: 360px;
+    height: 440px;
   }
 
   .hero-logo-img {
-    width: 240px;
-    max-height: 320px;
+    width: 340px;
+    max-height: 420px;
   }
 
   .hero-logo-glow {
@@ -432,13 +431,13 @@
   }
 
   .hero-logo-visual {
-    width: 200px;
-    height: 260px;
+    width: 300px;
+    height: 380px;
   }
 
   .hero-logo-img {
-    width: 190px;
-    max-height: 250px;
+    width: 280px;
+    max-height: 360px;
   }
 
   .hero-title {

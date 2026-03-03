@@ -2,6 +2,7 @@ import React, { useEffect, useRef } from 'react';
 import './About.css';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { CircleCheckBig, Heart, Clock } from 'lucide-react';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -65,49 +66,42 @@ const About: React.FC = () => {
             Faith-Guided Care<br />with Clinical Excellence
           </h2>
           <p className="about-text">
-            At COE Medical, we believe quality healthcare is a calling. Our team provides
-            compassionate, on-site medical care to long-term care facilities, nursing homes,
-            and assisted living communities across Texas.
+            At COE Medical, we believe quality healthcare is a calling. Our providers deliver
+            on-site primary care and behavioral health services to long-term care facilities,
+            post-acute settings, and assisted living communities across Texas, Montana, and Wyoming.
           </p>
           <p className="about-text">
-            Rooted in faith and driven by a commitment to excellence, we bring the provider
-            to the patient — ensuring everyone receives the care they deserve.
+            We bring the provider to the patient — our MDs and NPs handle primary care,
+            while our Psych NPs and LCSWs provide behavioral health and counseling services.
+            All insurances accepted.
           </p>
 
           <div className="about-features">
             <div className="about-feature">
               <div className="about-feature-icon green">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                  <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
-                  <polyline points="22 4 12 14.01 9 11.01"></polyline>
-                </svg>
+                <CircleCheckBig size={20} />
               </div>
               <div>
-                <h4 className="about-feature-title">On-Site Providers</h4>
-                <p className="about-feature-text">MD & NP team visits your facility directly</p>
+                <h4 className="about-feature-title">Primary Care</h4>
+                <p className="about-feature-text">MDs and NPs providing on-site medical care</p>
               </div>
             </div>
             <div className="about-feature">
               <div className="about-feature-icon purple">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                  <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
-                </svg>
+                <Heart size={20} />
               </div>
               <div>
-                <h4 className="about-feature-title">Compassionate Care</h4>
-                <p className="about-feature-text">Faith-based approach to patient well-being</p>
+                <h4 className="about-feature-title">Behavioral Health</h4>
+                <p className="about-feature-text">Psych NPs and LCSWs for mental health and counseling</p>
               </div>
             </div>
             <div className="about-feature">
               <div className="about-feature-icon gold">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                  <circle cx="12" cy="12" r="10"></circle>
-                  <polyline points="12 6 12 12 16 14"></polyline>
-                </svg>
+                <Clock size={20} />
               </div>
               <div>
-                <h4 className="about-feature-title">Available 24/7</h4>
-                <p className="about-feature-text">Round-the-clock nurse call center support</p>
+                <h4 className="about-feature-title">All Insurances Accepted</h4>
+                <p className="about-feature-text">Serving Texas, Montana, and Wyoming</p>
               </div>
             </div>
           </div>
