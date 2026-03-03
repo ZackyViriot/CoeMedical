@@ -6,10 +6,11 @@
   z-index: 100;
   padding: 12px 40px;
   transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  background-color: transparent;
 }
 
 .navbar-scrolled {
-  background-color: rgba(255, 255, 255, 0.95);
+  background-color: rgba(255, 255, 255, 0.97);
   backdrop-filter: blur(20px);
   box-shadow: 0 2px 24px var(--color-shadow);
   padding: 6px 40px;
@@ -46,14 +47,14 @@
 }
 
 .logo-img {
-  height: 160px;
+  height: 56px;
   width: auto;
   object-fit: contain;
   transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .navbar-scrolled .logo-img {
-  height: 100px;
+  height: 48px;
 }
 
 .logo:hover .logo-img {
@@ -374,7 +375,7 @@
   }
 
   .logo-img {
-    height: 120px;
+    height: 44px;
   }
 
   .nav-links-center {
