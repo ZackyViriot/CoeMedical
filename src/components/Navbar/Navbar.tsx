@@ -8,6 +8,7 @@ const Navbar: React.FC = () => {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const [heroLogoVisible, setHeroLogoVisible] = useState(true);
+  const [logoError, setLogoError] = useState(false);
 
   useEffect(() => {
     const nav = navRef.current;
@@ -62,8 +63,17 @@ const Navbar: React.FC = () => {
     <>
       <nav ref={navRef} className={`navbar ${scrolled ? 'navbar-scrolled' : ''}`}>
         <div className="navbar-inner">
-          <a href="/" className={`logo ${heroLogoVisible ? 'logo-hidden' : ''}`}>
-            <img src="/logo.png" alt="COE Medical — Care of Excellence PLLC" className="logo-img" />
+          <a href="/" className={`logo ${heroLogoVisible && !logoError ? 'logo-hidden' : ''}`}>
+            {!logoError ? (
+              <img
+                src="/logo.png"
+                alt="COE Medical — Care of Excellence PLLC"
+                className="logo-img"
+                onError={() => setLogoError(true)}
+              />
+            ) : (
+              <span className="logo-text">COE Medical</span>
+            )}
           </a>
 
           {/* Desktop nav */}
@@ -106,7 +116,11 @@ const Navbar: React.FC = () => {
       <div className={`mobile-overlay ${menuOpen ? 'mobile-overlay-open' : ''}`} onClick={() => setMenuOpen(false)} />
       <div className={`mobile-menu ${menuOpen ? 'mobile-menu-open' : ''}`}>
         <div className="mobile-menu-header">
-          <img src="/logo.png" alt="COE Medical" className="mobile-menu-logo" />
+          {!logoError ? (
+            <img src="/logo.png" alt="COE Medical" className="mobile-menu-logo" />
+          ) : (
+            <span className="mobile-menu-brand">COE Medical</span>
+          )}
         </div>
         <div className="mobile-menu-links">
           <a href="#home" className="mobile-link" onClick={handleLinkClick}>Home</a>
